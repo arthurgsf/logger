@@ -15,10 +15,6 @@ public class LogService {
     @Autowired
     LogRepository repo;
 
-    // Log.builder()
-    //         .maquina(Maquina.builder().id(idMaquina).build())
-    //         .build();
-
     public List<Log> buscar(Log log){
         Example<Log> example = Example.of(log, ExampleMatcher.matchingAny());
         return repo.findAll(example);
