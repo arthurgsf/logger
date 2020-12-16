@@ -49,5 +49,5 @@ public class Log {
 
     @ManyToOne
     @JoinColumn(name = "id_maquina")
-    private Maquina usuario;
+    private Maquina maquina;
 }
