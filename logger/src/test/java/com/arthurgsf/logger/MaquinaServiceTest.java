@@ -1,8 +1,6 @@
 package com.arthurgsf.logger;
 
 import java.util.List;
-
-import com.arthurgsf.logger.model.entity.Log;
 import com.arthurgsf.logger.model.entity.Maquina;
 import com.arthurgsf.logger.model.repo.MaquinaRepository;
 import com.arthurgsf.logger.service.MaquinaService;
