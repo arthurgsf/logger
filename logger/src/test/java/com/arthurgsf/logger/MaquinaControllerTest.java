@@ -37,7 +37,7 @@ public class MaquinaControllerTest {
     MaquinaService service;
 
     @Test
-    public void deveListarMaqinas() throws Exception{
+    public void deveListarMaquinas() throws Exception{
 
         long idMaquina = 1;
         // resposta mockada
