@@ -14,6 +14,7 @@ public class MaquinaService {
     MaquinaRepository repo;
 
     public List<Maquina> listar(){
+        // retorna todas as máquinas cadastradas
         return repo.findAll();
     }
 }

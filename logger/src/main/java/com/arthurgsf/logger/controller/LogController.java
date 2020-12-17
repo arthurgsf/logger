@@ -1,6 +1,4 @@
 package com.arthurgsf.logger.controller;
-
-import java.util.Comparator;
 import java.util.List;
 
 import com.arthurgsf.logger.model.entity.Log;
@@ -23,11 +21,14 @@ public class LogController {
     LogService logSrv;
 
     @GetMapping("/{id}")
+    /* Busca todos os logs associados à uma determinada máquina */
+    /* URL NO FORMATO : api/log/id */
     public ResponseEntity buscar(@PathVariable("id") Long idMaquina){
         try{
+            /* Constroi um Log com id_maquina = {id} para ser utilizado como example matcher na camada service*/
             Log l = Log.builder().maquina(Maquina.builder().id(idMaquina).build()).build();
             List<Log> lista = logSrv.buscar(l);
-            lista.sort(new LogComparator());
+            lista.sort(new LogComparator()); //ordenação de acordo com a regra definida no LogComparator
             return new ResponseEntity(lista, HttpStatus.OK);
 
         }catch(RuntimeException e){

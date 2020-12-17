@@ -18,6 +18,8 @@ public class MaquinaController {
     @Autowired MaquinaService maqSrv;
 
     @GetMapping
+    /* Lista todas as máquinas cadastradas na tabela de máquinas do banco de dados */
+    /* Retorna uma lista vazia caso não exista nenhuma máquina cadastrada */
     public ResponseEntity listar(){
         try{
             List<Maquina> lista = maqSrv.listar();
@@ -26,5 +28,4 @@ public class MaquinaController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
 }

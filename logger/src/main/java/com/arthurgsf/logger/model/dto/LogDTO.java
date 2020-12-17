@@ -9,6 +9,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+/* Não utilizado mas adicionado por precaução */
 @Data
 @Builder
 @NoArgsConstructor
