@@ -1,8 +1,10 @@
 package com.arthurgsf.logger.controller;
 
+import java.util.Comparator;
 import java.util.List;
 
 import com.arthurgsf.logger.model.entity.Log;
+import com.arthurgsf.logger.model.entity.LogComparator;
 import com.arthurgsf.logger.model.entity.Maquina;
 import com.arthurgsf.logger.service.LogService;
 
@@ -25,6 +27,7 @@ public class LogController {
         try{
             Log l = Log.builder().maquina(Maquina.builder().id(idMaquina).build()).build();
             List<Log> lista = logSrv.buscar(l);
+            lista.sort(new LogComparator());
             return new ResponseEntity(lista, HttpStatus.OK);
 
         }catch(RuntimeException e){
